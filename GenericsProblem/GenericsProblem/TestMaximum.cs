@@ -8,30 +8,23 @@ namespace GenericsProblem
 {
     public class TestMaximum
     {
-        public string MaxString(string firstNum, string secondNum, string thirdNum)
+        public T FindMax<T>(T firstVal, T secondVal, T thirdVal) where T : IComparable
         {
-            //TestCase-I
-            if(firstNum.CompareTo(secondNum) > 0 && firstNum.CompareTo(thirdNum) > 0 ||
-                firstNum.CompareTo(secondNum) >= 0 && firstNum.CompareTo(thirdNum) > 0 ||
-                firstNum.CompareTo(secondNum) > 0 && firstNum.CompareTo(thirdNum) >= 0)
+            if (firstVal.CompareTo(secondVal) >= 0 && firstVal.CompareTo(thirdVal) >= 0)
             {
-                return firstNum;
+                Console.WriteLine("{0} is greater number out of {1} {2} {3}", firstVal, firstVal, secondVal, thirdVal);
+                return firstVal;
             }
-            //TestCase-II
-            if (secondNum.CompareTo(firstNum) > 0 && secondNum.CompareTo(thirdNum) > 0 ||
-                secondNum.CompareTo(firstNum) >= 0 && secondNum.CompareTo(thirdNum) > 0 ||
-                secondNum.CompareTo(firstNum) > 0 && secondNum.CompareTo(thirdNum) >= 0)
+            else if (secondVal.CompareTo(firstVal) >= 0 && secondVal.CompareTo(thirdVal) >= 0)
             {
-                return secondNum;
+                Console.WriteLine("{0} is greater number out of {1} {2} {3}", secondVal, firstVal, secondVal, thirdVal);
+                return secondVal;
             }
-            //TestCase-III
-            if (thirdNum.CompareTo(firstNum) > 0 && thirdNum.CompareTo(secondNum) > 0 ||
-                thirdNum.CompareTo(firstNum) >= 0 && thirdNum.CompareTo(secondNum) > 0 ||
-                thirdNum.CompareTo(firstNum) > 0 && thirdNum.CompareTo(secondNum) >= 0)
+            else
             {
-                return thirdNum;
+                Console.WriteLine("{0} is greater number out of {1} {2} {3}", thirdVal, firstVal, secondVal, thirdVal);
+                return thirdVal;
             }
-            return firstNum;
         }
     }
 }

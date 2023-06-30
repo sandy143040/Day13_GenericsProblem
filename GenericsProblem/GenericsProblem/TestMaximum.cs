@@ -6,25 +6,37 @@ using System.Threading.Tasks;
 
 namespace GenericsProblem
 {
-    public class TestMaximum
+    public class TestMaximum<T> where T : IComparable
     {
-        public T FindMax<T>(T firstVal, T secondVal, T thirdVal) where T : IComparable
+        public T first, second, third;
+        public TestMaximum(T first, T second, T third)
         {
-            if (firstVal.CompareTo(secondVal) >= 0 && firstVal.CompareTo(thirdVal) >= 0)
+            this.first = first;
+            this.second = second;
+            this.third = third;
+        }
+        private static T FindMaximumValue(T first, T second, T third)
+        {
+            if (first.CompareTo(second) >= 0 && first.CompareTo(third) >= 0)
             {
-                Console.WriteLine("{0} is greater number out of {1} {2} {3}", firstVal, firstVal, secondVal, thirdVal);
-                return firstVal;
+                Console.WriteLine("{0} is greater number out of {1} {2} {3}", first, first, second, third);
+                return first;
             }
-            else if (secondVal.CompareTo(firstVal) >= 0 && secondVal.CompareTo(thirdVal) >= 0)
+            else if (second.CompareTo(first) >= 0 && second.CompareTo(third) >= 0)
             {
-                Console.WriteLine("{0} is greater number out of {1} {2} {3}", secondVal, firstVal, secondVal, thirdVal);
-                return secondVal;
+                Console.WriteLine("{0} is greater number out of {1} {2} {3}", second, first, second, third);
+                return second;
             }
             else
             {
-                Console.WriteLine("{0} is greater number out of {1} {2} {3}", thirdVal, firstVal, secondVal, thirdVal);
-                return thirdVal;
+                Console.WriteLine("{0} is greater number out of {1} {2} {3}", third, first, second, third);
+                return third;
             }
+        }
+        public void MaximumValue()
+        {
+            T maxValue = FindMaximumValue(first, second, third);
+            Console.WriteLine("Max value:" + maxValue);
         }
     }
 }

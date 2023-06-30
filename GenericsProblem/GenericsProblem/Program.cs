@@ -11,14 +11,15 @@ namespace GenericsProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Enter First Value: ");
-            var firstVal = Console.ReadLine();
-            Console.WriteLine( "Enter Second Value: ");
-            var secondVal = Console.ReadLine();
+            int firstVal = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Second Value: ");
+            int secondVal = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Third Value: ");
-            var thirdVal = Console.ReadLine();
-            TestMaximum testMaximum = new TestMaximum();
-            testMaximum.FindMax(firstVal, secondVal, thirdVal);
-       
+            int thirdVal = Convert.ToInt32(Console.ReadLine());
+
+            TestMaximum<int> testMaximum = new TestMaximum<int>(firstVal, secondVal, thirdVal);
+            testMaximum.MaximumValue();
+
             Console.ReadLine();
         }
     }

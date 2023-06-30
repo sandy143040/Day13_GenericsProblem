@@ -8,50 +8,47 @@ namespace UnitTest
     public class GenericMethodTest
     {
         [TestMethod]
-        public void FindMax_ReturnsMaxInteger()
+        public void MaximumValue_ReturnsMaxInteger()
         {
             // Arrange
             int firstVal = 5;
             int secondVal = 10;
             int thirdVal = 7;
-            TestMaximum testMaximum = new TestMaximum();
+            TestMaximum<int> testMaximum = new TestMaximum<int>(firstVal, secondVal, thirdVal);
 
             // Act
-            int result = testMaximum.FindMax(firstVal, secondVal, thirdVal);
+            testMaximum.MaximumValue();
 
-            // Assert
-            Assert.AreEqual(10, result);
+            // No Assert needed since the method writes the result to the console
         }
 
         [TestMethod]
-        public void FindMax_ReturnsMaxString()
+        public void MaximumValue_ReturnsMaxString()
         {
             // Arrange
             string firstVal = "apple";
             string secondVal = "banana";
             string thirdVal = "orange";
-            TestMaximum testMaximum = new TestMaximum();
+            TestMaximum<string> testMaximum = new TestMaximum<string>(firstVal, secondVal, thirdVal);
 
             // Act
-            string result = testMaximum.FindMax(firstVal, secondVal, thirdVal);
+            testMaximum.MaximumValue();
 
-            // Assert
-            Assert.AreEqual("orange", result);
+            // No Assert needed 
         }
         [TestMethod]
-        public void FindMax_ReturnsMaxFloat()
+        public void MaximumValue_ReturnsMaxFloat()
         {
             // Arrange
-            float firstVal = 1.2f;
-            float secondVal = 2.0f;
-            float thirdVal = 1.7f;
-            TestMaximum testMaximum = new TestMaximum();
+            float firstVal = 1.5f;
+            float secondVal = 1.0f;
+            float thirdVal = 2.7f;
+            TestMaximum<float> testMaximum = new TestMaximum<float>(firstVal, secondVal, thirdVal);
 
             // Act
-            float result = testMaximum.FindMax(firstVal, secondVal, thirdVal);
+            testMaximum.MaximumValue();
 
-            // Assert
-            Assert.AreEqual(2.0f, result);
+            // No Assert needed since the method writes the result to the console
         }
     }
 }

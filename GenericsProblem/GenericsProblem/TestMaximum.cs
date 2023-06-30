@@ -8,35 +8,31 @@ namespace GenericsProblem
 {
     public class TestMaximum<T> where T : IComparable
     {
-        public T first, second, third;
-        public TestMaximum(T first, T second, T third)
+        private List<T> values;
+
+        public TestMaximum(params T[] values)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
+            this.values = new List<T>(values);
         }
-        private static T FindMaximumValue(T first, T second, T third)
+
+        public T FindMax()
         {
-            if (first.CompareTo(second) >= 0 && first.CompareTo(third) >= 0)
+            if (values.Count == 0)
             {
-                Console.WriteLine("{0} is greater number out of {1} {2} {3}", first, first, second, third);
-                return first;
+                throw new InvalidOperationException("No values provided.");
             }
-            else if (second.CompareTo(first) >= 0 && second.CompareTo(third) >= 0)
+
+            T max = values[0];
+
+            foreach (T value in values)
             {
-                Console.WriteLine("{0} is greater number out of {1} {2} {3}", second, first, second, third);
-                return second;
+                if (value.CompareTo(max) > 0)
+                {
+                    max = value;
+                }
             }
-            else
-            {
-                Console.WriteLine("{0} is greater number out of {1} {2} {3}", third, first, second, third);
-                return third;
-            }
-        }
-        public void MaximumValue()
-        {
-            T maxValue = FindMaximumValue(first, second, third);
-            Console.WriteLine("Max value:" + maxValue);
+
+            return max;
         }
     }
 }

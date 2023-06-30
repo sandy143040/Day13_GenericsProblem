@@ -10,15 +10,20 @@ namespace GenericsProblem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter First Value: ");
-            int firstVal = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Second Value: ");
-            int secondVal = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Third Value: ");
-            int thirdVal = Convert.ToInt32(Console.ReadLine());
+            // Test case with integers
+            TestMaximum<int> intTestMaximum = new TestMaximum<int>(5, 10, 7, 12);
+            int maxInt = intTestMaximum.FindMax();
+            Console.WriteLine("Max integer value: " + maxInt);
 
-            TestMaximum<int> testMaximum = new TestMaximum<int>(firstVal, secondVal, thirdVal);
-            testMaximum.MaximumValue();
+            // Test case with floats
+            TestMaximum<float> floatTestMaximum = new TestMaximum<float>(3.5f, 2.1f, 4.8f, 1.9f);
+            float maxFloat = floatTestMaximum.FindMax();
+            Console.WriteLine("Max float value: " + maxFloat);
+
+            // Test case with strings
+            TestMaximum<string> stringTestMaximum = new TestMaximum<string>("apple", "banana", "orange", "mango");
+            string maxString = stringTestMaximum.FindMax();
+            Console.WriteLine("Max string value: " + maxString);
 
             Console.ReadLine();
         }

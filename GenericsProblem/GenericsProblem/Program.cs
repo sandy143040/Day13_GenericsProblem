@@ -11,13 +11,13 @@ namespace GenericsProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Enter First Value: ");
-            int firstVal = Convert.ToInt32(Console.ReadLine());
+            float firstVal = Convert.ToSingle(Console.ReadLine());
             Console.WriteLine( "Enter Second Value: ");
-            int secondVal = Convert.ToInt32(Console.ReadLine());
+            float secondVal = Convert.ToSingle(Console.ReadLine());
             Console.WriteLine("Enter Third Value: ");
-            int thirdVal = Convert.ToInt32(Console.ReadLine());
+            float thirdVal = Convert.ToSingle(Console.ReadLine());
             TestMaximum testMaximum = new TestMaximum();
-            int max = testMaximum.MaxInt(firstVal, secondVal, thirdVal);
+            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
             Console.WriteLine("{0} is Largest Number ", max);
             Console.ReadLine();
         }

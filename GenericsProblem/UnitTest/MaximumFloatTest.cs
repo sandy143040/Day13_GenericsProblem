@@ -5,18 +5,18 @@ using System;
 namespace UnitTest
 {
     [TestClass]
-    public class MaximumIntTest
+    public class MaximumFloatTest
     {
         [TestMethod]
         public void TestMethod1()
         {
             //Arrange
-            int firstVal = 20;
-            int secondVal = 15;
-            int thirdVal = 12;
+            float firstVal = 2.3f;
+            float secondVal = 1.9f;
+            float thirdVal = 1.0f;
             //Act
             TestMaximum testMaximum = new TestMaximum();
-            int max = testMaximum.MaxInt(firstVal, secondVal, thirdVal);
+            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
             //Assert
             Assert.AreEqual(firstVal, max);
         }
@@ -24,12 +24,12 @@ namespace UnitTest
         public void TestMethod2()
         {
             //Arrange
-            int firstVal = 20;
-            int secondVal = 35;
-            int thirdVal = 12;
+            float firstVal = 2.0f;
+            float secondVal = 3.5f;
+            float thirdVal = 1.2f;
             //Act
             TestMaximum testMaximum = new TestMaximum();
-            int max = testMaximum.MaxInt(firstVal, secondVal, thirdVal);
+            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
             //Assert
             Assert.AreEqual(secondVal, max);
         }
@@ -37,12 +37,12 @@ namespace UnitTest
         public void TestMethod3()
         {
             //Arrange
-            int firstVal = 10;
-            int secondVal = 3;
-            int thirdVal = 21;
+            float firstVal = 1.0f;
+            float secondVal = 1.3f;
+            float thirdVal = 2.1f;
             //Act
             TestMaximum testMaximum = new TestMaximum();
-            int max = testMaximum.MaxInt(firstVal, secondVal, thirdVal);
+            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
             //Assert
             Assert.AreEqual(thirdVal, max);
         }

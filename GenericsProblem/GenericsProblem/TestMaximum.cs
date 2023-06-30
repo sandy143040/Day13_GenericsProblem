@@ -8,7 +8,7 @@ namespace GenericsProblem
 {
     public class TestMaximum
     {
-        public float MaxFloat(float firstNum, float secondNum, float thirdNum)
+        public string MaxString(string firstNum, string secondNum, string thirdNum)
         {
             //TestCase-I
             if(firstNum.CompareTo(secondNum) > 0 && firstNum.CompareTo(thirdNum) > 0 ||

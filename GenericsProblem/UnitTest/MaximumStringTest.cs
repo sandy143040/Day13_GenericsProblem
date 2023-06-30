@@ -5,18 +5,18 @@ using System;
 namespace UnitTest
 {
     [TestClass]
-    public class MaximumFloatTest
+    public class MaximumStringTest
     {
         [TestMethod]
         public void TestMethod1()
         {
             //Arrange
-            float firstVal = 2.3f;
-            float secondVal = 1.9f;
-            float thirdVal = 1.0f;
+            string firstVal = "mango";
+            string secondVal = "apple";
+            string thirdVal = "banana";
             //Act
             TestMaximum testMaximum = new TestMaximum();
-            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
+            string max = testMaximum.MaxString(firstVal, secondVal, thirdVal);
             //Assert
             Assert.AreEqual(firstVal, max);
         }
@@ -24,12 +24,12 @@ namespace UnitTest
         public void TestMethod2()
         {
             //Arrange
-            float firstVal = 2.0f;
-            float secondVal = 3.5f;
-            float thirdVal = 1.2f;
+            string firstVal = "apple";
+            string secondVal = "mango";
+            string thirdVal = "banana";
             //Act
             TestMaximum testMaximum = new TestMaximum();
-            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
+            string max = testMaximum.MaxString(firstVal, secondVal, thirdVal);
             //Assert
             Assert.AreEqual(secondVal, max);
         }
@@ -37,12 +37,12 @@ namespace UnitTest
         public void TestMethod3()
         {
             //Arrange
-            float firstVal = 1.0f;
-            float secondVal = 1.3f;
-            float thirdVal = 2.1f;
+            string firstVal = "sandeep";
+            string secondVal = "kumar";
+            string thirdVal = "singh";
             //Act
             TestMaximum testMaximum = new TestMaximum();
-            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
+            string max = testMaximum.MaxString(firstVal, secondVal, thirdVal);
             //Assert
             Assert.AreEqual(thirdVal, max);
         }

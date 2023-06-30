@@ -11,14 +11,14 @@ namespace GenericsProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Enter First Value: ");
-            float firstVal = Convert.ToSingle(Console.ReadLine());
+            string firstVal = Console.ReadLine();
             Console.WriteLine( "Enter Second Value: ");
-            float secondVal = Convert.ToSingle(Console.ReadLine());
+            string secondVal = Console.ReadLine();
             Console.WriteLine("Enter Third Value: ");
-            float thirdVal = Convert.ToSingle(Console.ReadLine());
+            string thirdVal = Console.ReadLine();
             TestMaximum testMaximum = new TestMaximum();
-            float max = testMaximum.MaxFloat(firstVal, secondVal, thirdVal);
-            Console.WriteLine("{0} is Largest Number ", max);
+            string max = testMaximum.MaxString(firstVal, secondVal, thirdVal);
+            Console.WriteLine("{0} is Largest string ", max);
             Console.ReadLine();
         }
     }
